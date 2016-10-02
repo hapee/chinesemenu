@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+    <tr>
+        <th>Short Name</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    <tr ng-if="myCtrl.foundItems.length == 0">
+        <td colspan="4">Nothing found</td>
+    </tr>
+    <tr ng-repeat="item in myCtrl.foundItems">
+        <td>{{item.short_name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>
+            <button class="btn btn-info" ng-click="myCtrl.onRemove({index: $index});">I do not want this one!</button>
+        </td>
+    </tr>
+</table>
